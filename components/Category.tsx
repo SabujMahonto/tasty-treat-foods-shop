@@ -3,6 +3,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
 import { Pagination } from "swiper/modules";
+import { data } from "@/Data/categoryImages";
+import CategorySliderItem from "./CategorySliderItem";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,23 +16,26 @@ export default function Category() {
       {/* {category goes here} */}
       <div className="w-full h-[50vh]">
         <Swiper
+          grabCursor={true}
+          speed={750}
+          loop={true}
           slidesPerView={3}
           spaceBetween={30}
           pagination={{
             clickable: true,
           }}
           modules={[Pagination]}
-          className="mySwiper"
+          className="mySwiper w-full h-full"
         >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
+          {data.map((item) => (
+            <SwiperSlide key={item.id}>
+              <CategorySliderItem
+                image={item.src}
+                alt={item.alt}
+                name={item.name}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </section>
