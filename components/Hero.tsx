@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Link from "next/link";
+import Overlay from "./Overlay";
 
 export default function Hero() {
   return (
@@ -45,6 +46,7 @@ export default function Hero() {
                 className="w-full h-full object-cover"
               />
             </div>
+            <Overlay />
             <div className="absolute top-1/2 left-1/2 text-center  text-white -translate-x-1/2 -translate-y-1/2 z-[2] space-y-5">
               <h1
                 className="text-8xl font-semibold"
