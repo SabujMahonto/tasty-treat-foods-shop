@@ -45,22 +45,22 @@ export default function Hero() {
                 priority
                 className="w-full h-full object-cover"
               />
-            </div>
-            <Overlay />
-            <div className="absolute top-1/2 left-1/2 text-center  text-white -translate-x-1/2 -translate-y-1/2 z-[2] space-y-5">
-              <h1
-                className="text-8xl font-semibold"
-                data-swiper-parallax="-300%"
-              >
-                {item.headline}
-              </h1>
-              <p className="text-lg font-medium" data-swiper-parallax="-500%">
-                {item.paragraph}
-              </p>
-              <div data-swiper-parallax="-900%">
-                <Link href={"/product"} className="btn btn-accent">
-                  {item.cta}
-                </Link>
+              <Overlay />
+              <div className="absolute top-1/2 left-1/2 text-center  text-white -translate-x-1/2 -translate-y-1/2 z-[2] space-y-5">
+                <h1
+                  className="text-8xl font-semibold"
+                  data-swiper-parallax="-300%"
+                >
+                  {item.headline}
+                </h1>
+                <p className="text-lg font-medium" data-swiper-parallax="-500%">
+                  {item.paragraph}
+                </p>
+                <div data-swiper-parallax="-900%">
+                  <Link href={"/product"} className="btn btn-accent">
+                    {item.cta}
+                  </Link>
+                </div>
               </div>
             </div>
           </SwiperSlide>
